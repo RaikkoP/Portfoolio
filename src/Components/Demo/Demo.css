@@ -1,0 +1,25 @@
+.demo-border {
+    margin: 1em;
+    margin-top: 2em;
+    border: 1px solid black;
+}
+
+.split-screen {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.split-screen div{
+    align-items: center;
+    margin: 20px;
+    width: 100%;
+}
+
+.split-screen h1 {
+    font-size: 40px;
+}
+
+.split-screen p {
+    font-size: 20px;
+}

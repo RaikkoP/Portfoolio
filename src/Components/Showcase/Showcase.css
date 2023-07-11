@@ -1,0 +1,39 @@
+body{
+    font-family: 'Kanit', sans-serif;
+}
+
+#color1 {
+    background-color: #D6DBB2;
+    opacity: 70%;
+}
+#color2 {
+    background-color: #BCD8C1;
+    opacity: 70%;
+}
+
+.showcase-title {
+    text-align: center;
+}
+
+.steps p {
+    font-size: 24px;
+    padding: 15px;
+}
+
+.steps {
+    display: flex;
+    align-content: center;
+    justify-content: center; 
+}
+
+.steps-item {
+    align-items: center;
+    margin: 1px;
+    width: 100%;
+}
+
+
+.showcase-box {
+    margin: 1em;
+    margin-top: 2em;
+}
