@@ -32,6 +32,9 @@ body{
     width: 100%;
 }
 
+.step-text {
+    text-align: center;
+}
 
 .showcase-box {
     margin: 1em;

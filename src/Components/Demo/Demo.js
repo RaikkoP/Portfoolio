@@ -5,7 +5,7 @@ const Demo = () => {
     <div className="demo-border">
       <div className="split-screen">
         <div>
-          <h1>How it works</h1>
+          <h1>Who am I</h1>
           <p>Our app works by using Google's free to use API, that allows us to use
             Google Maps as a base for your application. The rest is done using a database
             containing all the postal routes and workers of the postal service who has hired us.

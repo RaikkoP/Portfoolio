@@ -7,7 +7,7 @@ const Nav = () => {
     <div className="nav">
       <ul>-
         <ul className="nav-left">
-            <li>Postimehed</li>
+            <li>Raikko Prants</li>
         </ul>
         <ul className="nav-right">
           <li>Home</li>
