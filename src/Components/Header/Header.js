@@ -9,19 +9,27 @@ const Header = () => {
   const [country, setCountry] = useState();
   const [temp, setTemp] = useState();
   const [text, setText] = useState();
+  const [location, setLocation] = useState("Tallinn");
+  const [formData, setFormData] = useState();
 
+  const handleForm = (event) => {
+    event.preventDefault();
+    const local = formData;
+    setLocation(local);
+    setFormData("");
+  };
 
   useEffect(() => {
     Axios.get(
-      "http://api.weatherapi.com/v1/current.json?key=a2122654d33a47c6b77144622231107&q=Tallinn&aqi=no"
+      `http://api.weatherapi.com/v1/current.json?key=a2122654d33a47c6b77144622231107&q=${location}&aqi=no`
     ).then((res) => {
       setName(res.data.location.name);
       setRegion(res.data.location.region);
       setCountry(res.data.location.country);
       setTemp(res.data.current.temp_c);
-      setText(res.data.current.condition.text)
-    })
-  }, []);
+      setText(res.data.current.condition.text);
+    });
+  }, [location]);
 
   useEffect(() => {
     const interval = setInterval(() => setTime(new Date()), 1000);
@@ -32,12 +40,25 @@ const Header = () => {
 
   return (
     <div className="header-box">
-      <h1>{time.toLocaleTimeString()}</h1>
-      <h1>{time.toLocaleDateString()}</h1>
       <div>
-        <h1>{name}, {region}, {country}</h1>
-        <h1>{temp}°C</h1>
-        <h1>{text}</h1>
+        <div className="box-top">
+          <h2>{time.toLocaleDateString()} {time.toLocaleTimeString()}  </h2>
+        </div>
+        <form onSubmit={handleForm}>
+          <input
+            onChange={(e) => setFormData(e.target.value)}
+            type="type"
+            id="location_id"
+            name="location_id"
+            className="input"
+          ></input>
+          <button id="submit-button" type="submit">'->'</button>
+        </form>
+        <h2>
+          {name}, {region}, {country}
+        </h2>
+        <h2>{temp}°C</h2>
+        <h2>{text}</h2>
       </div>
     </div>
   );
