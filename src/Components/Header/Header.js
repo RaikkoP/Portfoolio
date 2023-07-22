@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./Header.css";
 import Axios from "axios";
+import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
 
 const Header = () => {
   const [time, setTime] = useState(new Date());
@@ -11,6 +12,10 @@ const Header = () => {
   const [text, setText] = useState();
   const [location, setLocation] = useState("Tallinn");
   const [formData, setFormData] = useState();
+
+  const { isLoaded } = useLoadScript({
+    googleMapsApiKey: "AIzaSyA7WszpCQYF0bX02RFWmMDGb7QtyJknoiw",
+  });
 
   const handleForm = (event) => {
     event.preventDefault();
@@ -31,34 +36,18 @@ const Header = () => {
     });
   }, [location]);
 
-  useEffect(() => {
-    const interval = setInterval(() => setTime(new Date()), 1000);
-    return () => {
-      clearInterval(interval);
-    };
-  }, []);
+  if (!isLoaded) return <div>Loading...</div>;
 
   return (
-    <div className="header-box">
+    <div>
+      <div></div>
       <div>
-        <div className="box-top">
-          <h2>{time.toLocaleDateString()} {time.toLocaleTimeString()}  </h2>
-        </div>
-        <form onSubmit={handleForm}>
-          <input
-            onChange={(e) => setFormData(e.target.value)}
-            type="type"
-            id="location_id"
-            name="location_id"
-            className="input"
-          ></input>
-          <button id="submit-button" type="submit">'->'</button>
-        </form>
-        <h2>
-          {name}, {region}, {country}
-        </h2>
-        <h2>{temp}°C</h2>
-        <h2>{text}</h2>
+        <GoogleMap
+          zoom={5}
+          key={"AIzaSyA7WszpCQYF0bX02RFWmMDGb7QtyJknoiw"}
+          center={{ lat: 58, lng: 25 }}
+          mapContainerClassName="map-container"
+        ></GoogleMap>
       </div>
     </div>
   );
