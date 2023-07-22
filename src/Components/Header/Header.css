@@ -4,17 +4,11 @@
   padding-right: 5em;
   padding-bottom: 10em;
   padding-top: 1em;
-  background: black;
-
 }
 
 .header-box h2 {
   text-align: left;
-  color: white;
-}
-
-.box-top{
-    padding-bottom: 3em;
+  color: balck;
 }
 
 .input {
@@ -25,15 +19,7 @@
     color: white;
 }
 
-#submit-button{
-    margin-top: 10px;
-    padding: 5px;
-    font-size: 24px;
-    background: none;
-    border: 1px solid white;
-    border-radius: 30%;
-    color: green;
-    text-decoration: underline;
-    font-weight: bold;
-    cursor: pointer;
+.map-container {
+  height: 30em;
+  width: 100%;
 }

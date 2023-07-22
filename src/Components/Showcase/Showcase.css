@@ -2,41 +2,51 @@ body{
     font-family: 'Kanit', sans-serif;
 }
 
-#color1 {
-    background-color: #D6DBB2;
-    opacity: 70%;
-}
-#color2 {
-    background-color: #BCD8C1;
-    opacity: 70%;
-}
-
-.showcase-title {
-    text-align: center;
-}
-
-.steps p {
-    font-size: 24px;
-    padding: 15px;
-}
-
-.steps {
-    display: flex;
-    align-content: center;
-    justify-content: center; 
-}
-
-.steps-item {
-    align-items: center;
-    margin: 1px;
-    width: 100%;
-}
-
-.step-text {
-    text-align: center;
-}
-
 .showcase-box {
     margin: 1em;
     margin-top: 2em;
+}
+
+.skill-container{
+    padding-right: 10em;
+    padding-left: 10em;
+    
+}
+
+.skill {
+    padding-bottom: 10em;
+    margin-bottom: 2em;
+}
+
+.skill-pic {
+    width: 150px;
+    height: 150px;
+}
+
+.title h1 {
+    padding: 0;
+    font-size: 5em;
+    border: none;
+    background: none;
+}
+
+.title h1:after {
+    content: '';
+    display: block;
+    position: relative;
+    width: 6em;
+    margin-left: 0%;
+    border-bottom: 2px solid black;
+}
+
+#larger-width {
+    width: 225px;
+}
+
+#color1 {
+    background-color: lightgray;
+}
+
+#color2{
+
 }
